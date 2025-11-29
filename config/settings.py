@@ -129,13 +129,16 @@ SIMPLE_JWT = {
     "BLACKLIST_AFTER_ROTATION": True,
     "AUTH_HEADER_TYPES": ("Bearer",),
 }
-
 # CORS
-# Prefer configuring CORS_ALLOWED_ORIGINS via .env:
-# CORS_ALLOWED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
-CORS_ALLOWED_ORIGINS = env.list("CORS_ALLOWED_ORIGINS", default=[])
-# If you want to allow all origins (only for quick dev), set:
-# CORS_ALLOW_ALL_ORIGINS = env.bool("CORS_ALLOW_ALL_ORIGINS", default=False)
+CORS_ALLOWED_ORIGINS = env.list(
+    "CORS_ALLOWED_ORIGINS",
+    default=[
+        "http://localhost:5173",                   # React dev
+        "https://plansyncevent.netlify.app/",       # React prod
+    ],
+)
+
+# For cookie auth (optional)
 CORS_ALLOW_CREDENTIALS = True
 
 # Email (must set EMAIL_HOST_PASSWORD in environment in production)
