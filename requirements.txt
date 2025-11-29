@@ -1,43 +1,48 @@
+# --- Production / runtime deps (cross-platform) ---
 asgiref==3.10.0
-asttokens==2.4.1
 certifi==2025.4.26
 colorama==0.4.6
 comm==0.2.0
-debugpy==1.8.0
 decorator==5.1.1
 Django==5.0.4
 django-cors-headers==4.3.1
 django-environ==0.12.0
 djangorestframework==3.15.1
 djangorestframework-simplejwt==5.3.1
-executing==2.0.1
-ipykernel==6.27.1
-ipython==8.18.1
-jedi==0.19.1
-jupyter_client==8.6.0
-jupyter_core==5.5.1
-matplotlib-inline==0.1.6
-nest-asyncio==1.5.8
 packaging==23.2
-parso==0.8.3
 pinecone==7.0.0
 pinecone-plugin-interface==0.0.7
 platformdirs==4.1.0
-prompt-toolkit==3.0.43
 psutil==5.9.7
-pure-eval==0.2.2
-Pygments==2.17.2
 PyJWT==2.10.1
-pyreadline3==3.5.4
-python-dateutil==2.8.2
-pywin32==306
 pyzmq==25.1.2
 six==1.16.0
 sqlparse==0.5.3
-stack-data==0.6.3
 tornado==6.4
-traitlets==5.14.0
 typing_extensions==4.13.2
 tzdata==2025.2
 urllib3==2.4.0
 wcwidth==0.2.12
+
+# --- Packages required only on Windows (will be skipped on Linux hosts) ---
+pywin32==306; sys_platform == "win32"
+pyreadline3==3.5.4; sys_platform == "win32"
+
+# --- Interactive / dev / notebook packages (COMMENTED OUT for production)
+# Uncomment in a dev requirements-dev.txt if you run notebooks locally
+# ipykernel==6.27.1
+# ipython==8.18.1
+# jedi==0.19.1
+# jupyter_client==8.6.0
+# jupyter_core==5.5.1
+# matplotlib-inline==0.1.6
+# nest-asyncio==1.5.8
+# prompt-toolkit==3.0.43
+# pure-eval==0.2.2
+# Pygments==2.17.2
+# stack-data==0.6.3
+# traitlets==5.14.0
+# parso==0.8.3
+# asttokens==2.4.1
+# executing==2.0.1
+# psutil (already included above if needed)
