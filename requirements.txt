@@ -10,3 +10,4 @@ PyJWT==2.10.1
 sqlparse==0.5.4
 tzdata==2025.2
 whitenoise==6.11.0
+psycopg2-binary>=2.9
